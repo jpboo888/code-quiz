@@ -33,6 +33,8 @@ const quizData = [
     },
 ];
 
+// global consts and variables
+
 const quiz= document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
@@ -41,11 +43,12 @@ const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submitBtn = document.getElementById('submit')
+const timeH = document.querySelector('h1')
+const startBtn = document.getElementById('start')
 
 let currentQuiz = 0
 let score = 0
-
-loadQuiz()
+let timeSecond = 30
 
 function loadQuiz()  {
     deselectAnswers()
@@ -74,11 +77,16 @@ function getSelected()  {
     return answer  
 }
 
+// submit button
+
 submitBtn.addEventListener('click', () =>  {
     const answer = getSelected()
     if(answer)  {
         if (answer === quizData[currentQuiz].correct)  {
             score++
+        } 
+        else  {
+            timeSecond=timeSecond-5
         }
         
         currentQuiz++
@@ -92,14 +100,13 @@ submitBtn.addEventListener('click', () =>  {
 
             <button onclick="location.reload()">Reload</button>
             `
-
         }
     }
 })
 
-// Working on timer
-const timeH = document.querySelector('h1')
-let timeSecond = 30
+// start button
+
+startBtn.addEventListener('click', () =>  {
 
 timeH.innerHTML = `00:${timeSecond}`
 
@@ -113,34 +120,10 @@ const countDown = setInterval(()=>  {
 },1000
 )
 
-// Working on timer start button
+if  (timeSecond === 0)  {
+    throw error
+}
 
-const startBtn = document.getElementById('start')
-
-startBtn.addEventListener('click', () =>  {
-
+loadQuiz()
 })
 
-
-// var startTimer = null
-
-// function timer()
-
-
-
-// start.addEventListener('click',
-
-
-// //
-
-// var timer
-// var timerGet = document.getElementById()
-
-// (function ()  {
-//     var sec = 0
-//     timer = setInterval(()=>  {
-//     timerGet.innerHTML = '00:30'+sec
-//     sec --
-// }, 1000)
-
-// })
