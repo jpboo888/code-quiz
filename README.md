@@ -4,14 +4,16 @@ This code quiz was built so that when user clicks the start button, a timer star
 
 ## Built With
 
-[HTML]
-[CSS]
-[JavaScript]
-[API usage]
+-[HTML]
+-[CSS]
+-[JavaScript]
+-[API usage]
 
 ## Screenshot & Link
 
-![screenshot](./assets/images/code%20quiz%20screenshot.png
+![screenshot](./assets/images/code%20quiz%20screenshot.png)
+
+https://jpboo888.github.io/code-quiz/
 
 ## Contributing
 
